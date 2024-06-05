@@ -1,10 +1,18 @@
+# Youtube Music Desktop SDK
+Simple SDK for controlling [Youtube Music Desktop App](https://ytmdesktop.app/).
+
+## Installation
+`pip install ytmd-sdk`
+
+# Example
+```python
 from YTMDSDK import Events, YTMD, Parser
 from time import sleep
 
 ytmd = YTMD("touchportalytmd", "TouchPortalYTMD", "1.0.0")
 
-# ytmd.authenticate()
-ytmd.update_token("b60f60f7afe43e41488d2eb1bd0ca1bfc30ff94c0bf65d82ec3362eb200f3ca0700284f979d7ff97f87e3fbbef57daded7787d8125e996e9b854c10db3ef046086442d9135559d017ee9c25ad1e75b14d6acaa1c435b63d77f442d6f0d55cfdb9c7f394eccbe066854e1698c7af68aa531b35513d332063abed71853d4ffd410f1fd563f47e69950dbb17103ff8528d37e8f132e858eba8348b8d300adf06fe926594c0b3830fd5429df76d7760625b71834c2a87137347ff5e649ab1051962981243847c4c39e12acc6539529e48b65e4e0d15f58a50e279ca861f57d4dba849460280f1a6bdccf9632f33befb87505c0d9c3cc43b77003bc2d685c3e632f21")
+ytmd.authenticate() # get token key
+# ytmd.update_token("token")
 
 def on_connect():
     print("Connected to YTMD")
@@ -37,3 +45,12 @@ ytmd.register_event(Events.state_update, on_state_update)
 
 ytmd.connect()
 sleep(60)
+```
+
+## Change Log
+```
+- 1.0.0: Initial release
+```
+
+## Bugs and Suggestions
+If you have any bugs or suggestions, feel free to open an issue or a pull request.
