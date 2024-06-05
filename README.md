@@ -4,7 +4,7 @@ Simple SDK for controlling [Youtube Music Desktop App](https://ytmdesktop.app/).
 ## Installation
 `pip install ytmd-sdk`
 
-# Example
+## Example
 ```python
 from YTMDSDK import Events, YTMD, Parser
 from time import sleep
