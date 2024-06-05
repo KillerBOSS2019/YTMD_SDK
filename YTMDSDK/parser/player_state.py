@@ -32,8 +32,8 @@ class PlayerState(object):
         self.volume = data.get("volume", 0)
         self.muted = data.get("muted", False)
         self.adPlaying = data.get("adPlaying", False)
-        self.auto_play = data.get("autoplay", False)
-        self.queue = [queueItem(item) for item in data.get("queue", []).get("items", [])]
+        self.auto_play = data.get("queue", {}).get("autoplay", False)
+        self.queue = [queueItem(item) for item in data.get("queue", {}).get("items", [])]
         self.isGenerating = data.get("isGenerating", False)
         self.isInfinite = data.get("isInfinite", False)
         self.repeatMode = repeatMode_converter.get(data.get("repeatMode", -1), "Unknown")

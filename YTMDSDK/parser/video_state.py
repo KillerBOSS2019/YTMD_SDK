@@ -28,6 +28,6 @@ class VideoState(object):
         self.album = data.get("album", "")
         self.album_id = data.get("albumId", "")
         self.like_status = like_status_converter.get(data.get("likeStatus", -1), "Unknown")
-        self.thumbnails = [Thumbnail(item) for item in data['thumbnails']]
+        self.thumbnails = [Thumbnail(item) for item in data.get("thumbnails", [])]
         self.duration_seconds = data.get("durationSeconds", 0)
         self.id = data.get("id", "")
