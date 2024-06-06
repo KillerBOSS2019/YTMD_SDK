@@ -1,5 +1,4 @@
 from YTMDSDK import Events, YTMD, Parser
-from time import sleep
 
 ytmd = YTMD("touchportalytmd", "TouchPortalYTMD", "1.0.0")
 
@@ -36,4 +35,3 @@ ytmd.register_event(Events.error, on_error)
 ytmd.register_event(Events.state_update, on_state_update)
 
 ytmd.connect()
-sleep(60)
