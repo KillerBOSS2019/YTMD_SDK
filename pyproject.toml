@@ -9,7 +9,7 @@ exclude = ["tests"]  # empty by default
 namespaces = true  # true by default
 
 [project]
-name = "YTMD-SDK"
+name = "ytmd-sdk"
 version = "1.0.0"
 dependencies = [
   "requests==2.31.0",
