@@ -1,4 +1,4 @@
-from YTMDSDK import Events, YTMD, Parser
+from ytmd_sdk import Events, YTMD, Parser
 
 ytmd = YTMD("touchportalytmd", "TouchPortalYTMD", "1.0.0")
 

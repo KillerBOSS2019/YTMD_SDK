@@ -1,7 +1,7 @@
 import unittest
-from YTMDSDK import Parser
-from YTMDSDK.parser.queue import queueItem
-from YTMDSDK.parser.thumbnail import Thumbnail
+from ytmd_sdk import Parser
+from ytmd_sdk.parser.queue import queueItem
+from ytmd_sdk.parser.thumbnail import Thumbnail
 
 class TestParser(unittest.TestCase):
     

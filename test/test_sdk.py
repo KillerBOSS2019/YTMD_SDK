@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from YTMDSDK import YTMD
+from ytmd_sdk import YTMD
 from requests import Session
 
 class TestYTMD(unittest.TestCase):
