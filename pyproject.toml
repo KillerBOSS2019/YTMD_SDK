@@ -2,12 +2,6 @@
 requires = ["setuptools >= 61.0"]
 build-backend = "setuptools.build_meta"
 
-[tool.setuptools.packages.find]
-where = ["ytmd_sdk"]  # ["."] by default
-include = ["*"]  # ["*"] by default
-exclude = ["tests"]  # empty by default
-namespaces = true  # true by default
-
 [project]
 name = "ytmd-sdk"
 version = "1.0.0"
