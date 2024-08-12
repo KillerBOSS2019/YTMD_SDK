@@ -11,7 +11,7 @@ class YTMD:
                 app_version: str,
                 host: str = "127.0.0.1",
                 port: int = 9863,
-                token: str = None):
+                token: str = None, logging=False):
         self.id = app_id
         self.name = app_name
         self.version = app_version
@@ -24,7 +24,7 @@ class YTMD:
         self.session = requests.Session()
         self.session.headers.update({"Content-Type": "application/json"})
 
-        self.socket = socketio.Client(logger=False)
+        self.socket = socketio.Client(logger=logging)
         self.registered_events = []
 
     def register_event(self, event: str, callback: Callable) -> None:
@@ -43,11 +43,8 @@ class YTMD:
         self.socket.on(event, callback, namespace=self.namespace)
         self.registered_events.append(event)
 
-    def connect(self, wait=False) -> None:
+    def connect(self) -> None:
         """Connect to YTMD Socket
-
-        Args:
-            wait (bool, optional): wait arg makes connect() a blocking function. Defaults to False.
         """
         self._check_token()
 
@@ -58,7 +55,7 @@ class YTMD:
             self.socket.connect(
                 f"ws://{self.host}:9863",
                 auth={'token': self.token}, transports=["websocket"],
-                namespaces=[self.namespace], wait=wait
+                namespaces=[self.namespace]
             )
         except Exception as e:
             raise Exception(f"Failed to connect to YTMD: {e}")

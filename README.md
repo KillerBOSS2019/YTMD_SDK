@@ -11,8 +11,8 @@ from time import sleep
 
 ytmd = YTMD("touchportalytmd", "TouchPortalYTMD", "1.0.0")
 
-ytmd.authenticate() # get token key
-# ytmd.update_token("token")
+key = ytmd.authenticate() # get token key and sets it at same time
+# ytmd.update_token("token") # if you already have a token key you can set it like this
 
 def on_connect():
     print("Connected to YTMD")
